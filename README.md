@@ -1,4 +1,4 @@
-[![gtfv](https://circleci.com/gh/gtfv/poll-manager.svg?style=svg)](<LINK>)
+[![gtvf](https://circleci.com/gh/gtvf/poll-manager.svg?style=svg)](https://app.circleci.com/pipelines/github/gtvf/poll-manager)
 
 ### Run backend
 
