@@ -1,7 +1,9 @@
-###Run backend
+[![gtfv](https://circleci.com/gh/gtfv/poll-manager.svg?style=svg)](<LINK>)
+
+### Run backend
 
 1. Run local server
-    ```bash
+    ```shell
     $ cd poll-manager
     $ docker-compose up -d --build
     ```
