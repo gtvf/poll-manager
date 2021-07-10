@@ -1,2 +1,6 @@
 fastapi==0.66.0
 uvicorn==0.14.0
+SQLAlchemy==1.4.20
+pydantic==1.8.2
+flake8==3.9.2
+isort==5.9.1

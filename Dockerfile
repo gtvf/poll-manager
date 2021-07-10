@@ -1,5 +1,6 @@
-FROM python:3.9-alpine
-RUN pip install fastapi uvicorn
+FROM python:3.9
 EXPOSE 8000
-COPY ./app /app
+COPY . /poll-manager
+WORKDIR /poll-manager
+RUN pip install -r requirements.txt
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]

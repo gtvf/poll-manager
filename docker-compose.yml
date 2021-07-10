@@ -1,6 +1,24 @@
-version: "3.9"
+version: "3.6"
+
 services:
-  backend:
+  fastapi:
     build: .
     ports:
       - "8000:8000"
+    networks:
+      - pmn
+
+  db:
+    image: postgres:11-alpine
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    ports:
+      - "5432:5432"
+    networks:
+      - pmn
+
+networks:
+  pmn:
+    driver: bridge
