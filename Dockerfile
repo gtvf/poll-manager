@@ -1,5 +1,12 @@
-FROM python:3.9-alpine
-RUN pip install fastapi uvicorn
+FROM python:3.9
 EXPOSE 8000
-COPY ./app /app
+COPY . /poll-manager
+WORKDIR /poll-manager
+RUN pip install -r requirements.txt
+ARG POSTGRES_DB
+ARG POSTGRES_USER
+ARG POSTGRES_PASSWORD
+ARG POSTGRES_URL
+ARG POSTGRES_PORT
+ENV POSTGRES_DB=$POSTGRES_DB POSTGRES_USER=$POSTGRES_USER POSTGRES_PASSWORD=$POSTGRES_PASSWORD POSTGRES_URL=$POSTGRES_URL POSTGRES_PORT=$POSTGRES_PORT
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]

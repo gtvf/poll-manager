@@ -2,9 +2,11 @@
 
 ### Run backend
 
-1. Run local server
+1. Make sure following env vars set in your host system:
+   `$POSTGRES_PASSWORD`, `$POSTGRES_USER`, `$POSTGRES_DB`, `$POSTGRES_URL`, `$POSTGRES_PORT`
+2. Run local server
     ```shell
     $ cd poll-manager
     $ docker-compose up -d --build
     ```
-2. Navigate to Swagger UI: http://0.0.0.0:8000/docs
+3. Navigate to Swagger UI: http://0.0.0.0:8000/docs
