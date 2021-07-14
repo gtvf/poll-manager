@@ -7,6 +7,7 @@ class Poll(BaseModel):
     id: int
     title: str
     description: Optional[str] = None
+    answers: list
 
     class Config:
         orm_mode = True
