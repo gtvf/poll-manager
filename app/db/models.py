@@ -22,6 +22,7 @@ class Answer(Base):
     poll_id = Column(Integer, ForeignKey('polls.id'))
 
     poll = relationship('Poll', back_populates='answers')
+    votes = relationship('Vote', back_populates='answer')
 
 
 class Vote(Base):
@@ -30,3 +31,5 @@ class Vote(Base):
     id = Column(Integer, primary_key=True, index=True)
     poll_id = Column(Integer, ForeignKey('polls.id'))
     answer_id = Column(Integer, ForeignKey('answers.id'))
+
+    answer = relationship('Answer', back_populates='votes')
