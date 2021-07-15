@@ -27,5 +27,6 @@ class Answer(Base):
 class Vote(Base):
     __tablename__ = 'votes'
 
+    id = Column(Integer, primary_key=True, index=True)
     poll_id = Column(Integer, ForeignKey('polls.id'))
     answer_id = Column(Integer, ForeignKey('answers.id'))
