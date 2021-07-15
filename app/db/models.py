@@ -22,10 +22,18 @@ class Answer(Base):
     poll_id = Column(Integer, ForeignKey('polls.id'))
 
     poll = relationship('Poll', back_populates='answers')
+    votes = relationship('Vote', back_populates='answer')
+
+    @property
+    def votes_count(self):
+        return len(self.votes)
 
 
 class Vote(Base):
     __tablename__ = 'votes'
 
+    id = Column(Integer, primary_key=True, index=True)
     poll_id = Column(Integer, ForeignKey('polls.id'))
     answer_id = Column(Integer, ForeignKey('answers.id'))
+
+    answer = relationship('Answer', back_populates='votes')
