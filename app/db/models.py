@@ -24,6 +24,10 @@ class Answer(Base):
     poll = relationship('Poll', back_populates='answers')
     votes = relationship('Vote', back_populates='answer')
 
+    @property
+    def votes_count(self):
+        return len(self.votes)
+
 
 class Vote(Base):
     __tablename__ = 'votes'
