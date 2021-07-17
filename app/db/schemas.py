@@ -26,6 +26,17 @@ class Poll(BaseModel):
     title: str
     description: Optional[str] = None
     answers: List[Answer]
+    user_id: int
+
+    class Config:
+        orm_mode = True
+
+
+class User(BaseModel):
+    id: int
+    email: str
+    password: str
+    username: str
 
     class Config:
         orm_mode = True
