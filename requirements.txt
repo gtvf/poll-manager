@@ -7,3 +7,4 @@ flake8==3.9.2
 isort==5.9.1
 async-exit-stack==1.0.1
 async-generator==1.10
+alembic==1.6.5

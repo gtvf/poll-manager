@@ -9,4 +9,8 @@
     $ cd poll-manager
     $ docker-compose up -d --build
     ```
-3. Navigate to Swagger UI: http://0.0.0.0:8000/docs
+3. Run migrations
+   ```shell
+   $ alembic upgrade head
+   ```
+4. Navigate to Swagger UI: http://0.0.0.0:8000/docs
