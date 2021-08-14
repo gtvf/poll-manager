@@ -1,0 +1,7 @@
+import os
+
+POSTGRES_URL = os.environ['POSTGRES_URL']
+POSTGRES_DB = os.environ['POSTGRES_DB']
+POSTGRES_USER = os.environ['POSTGRES_USER']
+POSTGRES_PASSWORD = os.environ['POSTGRES_USER']
+POSTGRES_PORT = os.environ['POSTGRES_PORT']
