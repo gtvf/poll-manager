@@ -2,6 +2,7 @@ version: "3.6"
 
 services:
   fastapi:
+    container_name: pm_fastapi
     build:
       context: .
       dockerfile: Dockerfile
@@ -22,11 +23,11 @@ services:
     image: postgres:11-alpine
     container_name: pm_postgres
     environment:
-      - POSTGRES_DB=${POSTGRES_DB}
-      - POSTGRES_USER=${POSTGRES_USER}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     ports:
-      - "5432:5432"
+      - 5432:5432
     networks:
       - pmn
 
